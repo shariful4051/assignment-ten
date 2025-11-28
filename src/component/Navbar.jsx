@@ -49,7 +49,7 @@ const Navbar = () => {
   </div>
     <div className="navbar-end">
     <div className="dropdown dropdown-bottom">
-  <div tabIndex={0} role="button" className=" m-1">{user?<img className='w-[50px] h-[50px] bg-blue-300 rounded-full' src={user?.photoURL} alt="" />:<button><Link to='/login' className='btn'>Login</Link></button>}</div>
+  <div tabIndex={0} role="button" className=" m-1">{user?<img className='w-[50px] h-[50px] bg-blue-300 rounded-full' src={user?.photoURL} alt="" />:<button><Link to='/login' className='btn'><span className='text-primary '>Login</span></Link></button>}</div>
   <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
  
       <li className='font-semibold'><NavLink to='/login'>Login </NavLink></li>

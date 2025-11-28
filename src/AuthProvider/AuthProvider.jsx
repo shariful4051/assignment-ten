@@ -13,7 +13,7 @@ const AuthProvider = ({children}) => {
     }
     //---------------sign in---------
     const loginUser = (email,password)=>{
-        return signInWithEmailAndPassword(email,password)
+        return signInWithEmailAndPassword(auth,email,password)
     }
     //-------------google user----------
     const googleUser = ()=>{

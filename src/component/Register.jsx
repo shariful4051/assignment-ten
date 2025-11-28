@@ -21,6 +21,7 @@ const Register = () => {
         googleUser()
         .then(result=>{
             setUser(result.user)
+            navigate('/')
            toast.success('Google login success!')
     })
     .catch(error=>{
@@ -40,9 +41,9 @@ const Register = () => {
       //console.log(email,password,name,photo); 
       
 
-        const passwordReg =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-  if(!passwordReg.test(password)){
-    setError('Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character (e.g. @, $, !, %, *, ?, &)')
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+  if(!passwordRegex.test(password)){
+    setError("Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.")
     return
   }
 
