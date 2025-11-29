@@ -22,7 +22,7 @@ const Navbar = () => {
          {user&&
          
         <> <li><NavLink  to="/createProfile"><span onClick={()=>setToggle('creatProfile')} className={` font-medium text-[#000000] mr-3 ${toggle==='creatProfile'&&'text-[#9F62F2]   border-b'}`}>Create Partner Profile</span></NavLink></li>
-         <li><NavLink  to="/"><span onClick={()=>setToggle('myconnection')} className={` font-medium text-[#000000] mr-3 ${toggle==='myconnection'&&'text-[#9F62F2]   border-b'}`}>My Connections</span></NavLink></li>
+         <li><NavLink  to="/myconnection"><span onClick={()=>setToggle('myconnection')} className={` font-medium text-[#000000] mr-3 ${toggle==='myconnection'&&'text-[#9F62F2]   border-b'}`}>My Connections</span></NavLink></li>
          </>
          }
         

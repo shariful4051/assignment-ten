@@ -8,6 +8,7 @@ import Profile from '../component/Profile';
 import FindPartners from '../component/FindPartners';
 import PartnerDetails from '../component/PartnerDetails';
 import CreatProfile from '../component/CreatProfile';
+import MyConnection from '../component/MyConnection';
 
 const Router = createBrowserRouter([{
     path:'/',
@@ -35,6 +36,10 @@ const Router = createBrowserRouter([{
         {
             path:'/createProfile',
             element:<CreatProfile></CreatProfile>
+        },
+        {
+            path:'/myconnection',
+            element:<MyConnection></MyConnection>
         },
         {
             path:'/login',

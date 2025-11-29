@@ -1,12 +1,12 @@
+import React from 'react';
+import { Link } from 'react-router';
 
-import { Link, NavLink } from 'react-router';
+const MyConnectionCard = ({partner}) => {
 
-const Find3PartnerCard = ({partner}) => {
-    console.log(partner);
     const {profileimage,name,subject,experienceLevel,rating,_id} = partner;
-   
+    
     return (
-    <div className="card bg-base-100 w-96 shadow-sm">
+        <div className="card bg-base-100 w-96 shadow-sm">
   <figure className="px-10 pt-10">
     <img 
       src={profileimage}
@@ -21,11 +21,12 @@ const Find3PartnerCard = ({partner}) => {
     </p>
     <p><span className='font-semibold'>Rating : </span> <span className='text-primary font-bold'>{rating}</span></p>
     <div className="card-actions">
-      <button className="btn btn-primary"><Link to={`/partnerDetails/${_id}`}>View Profile</Link></button>
+      <button className="btn btn-primary"><Link to={`/partnerDetails/${_id}`}>Delete</Link></button>
+      <button className="btn btn-primary"><Link to={`/partnerDetails/${_id}`}>Edit</Link></button>
     </div>
   </div>
 </div>
     );
 };
 
-export default Find3PartnerCard;
+export default MyConnectionCard;

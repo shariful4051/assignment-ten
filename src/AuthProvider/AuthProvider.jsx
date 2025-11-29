@@ -7,6 +7,7 @@ const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null)
     console.log(user);
     const [loding,setLoding] = useState(true)
+    const [reload,setReload] = useState(false)
     //------------createUser-------------
     const createUser = (email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
@@ -44,7 +45,9 @@ const AuthProvider = ({children}) => {
         user,
         setUser,
         loding,
-        setLoding
+        setLoding,
+        reload,
+        setReload
     }
     return (
         <div>

@@ -1,14 +1,61 @@
-import React from 'react';
+import React, { use } from 'react';
 import { useLoaderData } from 'react-router';
+import AuthContext from '../AuthContext/AuthContext';
+import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const PartnerDetails = () => {
+  const{user}=use(AuthContext)
     const partner = useLoaderData();
-    const{name,subject,studyMode,location,availabilityTime,experienceLevel,patnerCount,profileimage,
-
-
-}=partner;
+    const{name,subject,studyMode,location,availabilityTime,experienceLevel,patnerCount,profileimage,_id,rating,email}=partner;
 
     console.log('from details',partner);
+
+  //---------add partner---------
+
+  const addPartner = ()=>{
+    const partner ={
+      name:name,
+      partnerId:_id,
+      profileimage:profileimage,
+      subject:subject,
+      studyMode:studyMode,
+      availabilityTime:availabilityTime,
+      location:location,
+      experienceLevel:experienceLevel,
+      rating:rating,
+      patnerCount:patnerCount,
+      email:email,
+      myEmail:user?.email
+    }
+    console.log('from add partner',partner);
+    fetch('http://localhost:3000/myconnection',{
+      method:'post',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(partner)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(' add patner atter post data',data);
+      if(data.insertedId){
+         Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Patner added successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+        });
+      }
+    })
+    .catch(error=>{
+      toast.error(error.message)
+    });
+    
+    
+  }
+
     return (
 
    <div className="hero bg-base-200 min-h-screen">
@@ -47,7 +94,7 @@ const PartnerDetails = () => {
         <span className='font-bold text-primary'>{patnerCount}.</span>
       </p>
       
-      <button className="btn btn-primary">Get Started</button>
+      <button onClick={addPartner} className="btn btn-primary">Add Partner</button>
     </div>
   </div>
 </div>

@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { use, useEffect, useState } from 'react';
 import Find3PartnerCard from './Find3PartnerCard';
+import AuthContext from '../AuthContext/AuthContext';
 
-const Find3Partner = ({allPartners}) => {
+const Find3Partner = () => {
+
+  const {reload,setReload}= use(AuthContext)
+    
+    const[allPartners,setAllPartners] = useState([])
+     useEffect(()=>{
+      fetch('http://localhost:3000/highRating')
+      .then(res=>res.json())
+      .then(data=>{
+        setAllPartners(data)
+      })
+    },[reload])
     
     return (
         <div>
