@@ -22,6 +22,8 @@ const MyConnection = () => {
             {myPartners.map(partner=><MyConnectionCard 
              key={partner._id} 
              partner={partner}
+             myPartners={myPartners}
+             setMyPartners={setMyPartners}
             ></MyConnectionCard>)}
         </div>
         </div>
