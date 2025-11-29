@@ -3,7 +3,7 @@ import { BsBookHalf } from 'react-icons/bs';
 
 const Footer = () => {
     return (
-       <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
+       <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 mb-8">
   <aside>
     <svg
       width="50"

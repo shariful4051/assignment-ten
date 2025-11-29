@@ -5,6 +5,9 @@ import Home from '../Home/Home';
 import Login from '../component/Login';
 import Register from '../component/Register';
 import Profile from '../component/Profile';
+import FindPartners from '../component/FindPartners';
+import PartnerDetails from '../component/PartnerDetails';
+import CreatProfile from '../component/CreatProfile';
 
 const Router = createBrowserRouter([{
     path:'/',
@@ -18,6 +21,20 @@ const Router = createBrowserRouter([{
         {
             path:'/profile',
             element:<Profile></Profile>
+        },
+        {
+            path:'/findPartners',
+            Component:FindPartners,
+            
+        },
+        {
+            path:'/partnerDetails/:id',
+            element:<PartnerDetails></PartnerDetails>,
+            loader:({params})=>fetch(`http://localhost:3000/allpartners/${params.id}`)
+        },
+        {
+            path:'/createProfile',
+            element:<CreatProfile></CreatProfile>
         },
         {
             path:'/login',

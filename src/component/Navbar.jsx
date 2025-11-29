@@ -18,10 +18,10 @@ const Navbar = () => {
   }
      const links = <>
          <li><NavLink  to="/"><span onClick={()=>setToggle('home')} className={` font-medium text-[#000000] mr-3 ${toggle==='home'&&'text-[#9F62F2]   border-b'}`}>Home</span></NavLink></li>
-         <li><NavLink  to="/"><span onClick={()=>setToggle('findPatner')} className={` font-medium text-[#000000] mr-3 ${toggle==='findPatner'&&'text-[#9F62F2]   border-b'}`}>Find Partners</span></NavLink></li>
+         <li><NavLink  to="/findPartners"><span onClick={()=>setToggle('findPatner')} className={` font-medium text-[#000000] mr-3 ${toggle==='findPatner'&&'text-[#9F62F2]   border-b'}`}>Find Partners</span></NavLink></li>
          {user&&
          
-        <> <li><NavLink  to="/"><span onClick={()=>setToggle('creatProfile')} className={` font-medium text-[#000000] mr-3 ${toggle==='creatProfile'&&'text-[#9F62F2]   border-b'}`}>Create Partner Profile</span></NavLink></li>
+        <> <li><NavLink  to="/createProfile"><span onClick={()=>setToggle('creatProfile')} className={` font-medium text-[#000000] mr-3 ${toggle==='creatProfile'&&'text-[#9F62F2]   border-b'}`}>Create Partner Profile</span></NavLink></li>
          <li><NavLink  to="/"><span onClick={()=>setToggle('myconnection')} className={` font-medium text-[#000000] mr-3 ${toggle==='myconnection'&&'text-[#9F62F2]   border-b'}`}>My Connections</span></NavLink></li>
          </>
          }

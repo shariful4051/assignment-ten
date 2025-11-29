@@ -7,9 +7,9 @@ const Banner = () => {
     return (
          <div className='bg-blue-200 rounded-md mb-3'>
             <Marquee className='flex'>
-                <img className='h-[250px] w-[300px] rounded-md' src={threeBoy} alt="" />
-                <img className='h-[250px] w-[300px] rounded-md' src={online} alt="" />
-                <img className='h-[250px] w-[300px] rounded-md' src={twoBoy} alt="" />
+                <img className='h-[250px] w-[380px] rounded-md' src={threeBoy} alt="" />
+                <img className='h-[250px] w-[380px] rounded-md' src={online} alt="" />
+                <img className='h-[250px] w-[380px] rounded-md' src={twoBoy} alt="" />
             </Marquee>
         </div>
     );
