@@ -1,9 +1,9 @@
 import React, { use, useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import {  useParams } from 'react-router';
 import AuthContext from '../AuthContext/AuthContext';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
-import { reload } from 'firebase/auth';
+
 
 const PartnerDetails = () => {
   const{user,reload,setReload}=use(AuthContext)

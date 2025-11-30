@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router';
 
 const Find3PartnerCard = ({partner}) => {
     console.log(partner);
-    const {profileimage,name,subject,experienceLevel,rating,_id} = partner;
+    const {profileimage,name,subject,experienceLevel,rating,_id,patnerCount} = partner;
    
     return (
     <div className="card bg-base-100 w-96 shadow-sm">
@@ -16,6 +16,9 @@ const Find3PartnerCard = ({partner}) => {
   <div className="card-body">
     <h2 className="card-title">{name}</h2>
     <p><span className='font-semibold '>Subject : </span> <span className='text-primary font-bold'>{subject}</span></p>
+
+    <p><span className='font-semibold '>Partner-Count : </span> <span className='text-primary font-bold'>{patnerCount}</span></p>
+
     <p>
         <span className='font-semibold'>Skill : </span><span className='text-primary font-bold'>{experienceLevel}</span>
     </p>

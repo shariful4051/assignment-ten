@@ -1,11 +1,12 @@
 import React, { use, useEffect, useState } from 'react';
 import Find3PartnerCard from '../Home/Find3PartnerCard';
 import AuthContext from '../AuthContext/AuthContext';
+import Loding from './Loding';
 //const findPartnersPromise = fetch('http://localhost:3000/allpartners').then(res=>res.json())
 
 const FindPartners = () => {
     //const allPartners = use(findPartnersPromise)
-    const {reload} = use(AuthContext)
+    const {reload,loding} = use(AuthContext)
 
     const [allPartners,setAllPartners] = useState([])
 
@@ -16,6 +17,10 @@ const FindPartners = () => {
             setAllPartners(data)
         })
     },[reload])
+  if(loding){
+    return <Loding></Loding>
+  }
+
     return (
          <div>
            

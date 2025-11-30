@@ -9,10 +9,12 @@ import FindPartners from '../component/FindPartners';
 import PartnerDetails from '../component/PartnerDetails';
 import CreatProfile from '../component/CreatProfile';
 import MyConnection from '../component/MyConnection';
+import Error from '../component/Error';
+import PrivateRouter from '../PrivateRouter/PrivateRouter';
 
 const Router = createBrowserRouter([{
     path:'/',
-    errorElement:<p>page not found</p>,
+    errorElement:<Error></Error>,
     Component:MainLayout,
     children:[
         {
@@ -21,7 +23,9 @@ const Router = createBrowserRouter([{
         },
         {
             path:'/profile',
-            element:<Profile></Profile>
+            element:<PrivateRouter>
+                <Profile></Profile>
+            </PrivateRouter>
         },
         {
             path:'/findPartners',
@@ -30,16 +34,22 @@ const Router = createBrowserRouter([{
         },
         {
             path:'/partnerDetails/:id',
-            element:<PartnerDetails></PartnerDetails>,
-           // loader:({params})=>fetch(`http://localhost:3000/allpartners/${params.id}`)
+            element:<PrivateRouter>
+                <PartnerDetails></PartnerDetails>
+            </PrivateRouter>
+          
         },
         {
             path:'/createProfile',
-            element:<CreatProfile></CreatProfile>
+            element:<PrivateRouter>
+                <CreatProfile></CreatProfile>
+            </PrivateRouter>
         },
         {
             path:'/myconnection',
-            element:<MyConnection></MyConnection>
+            element:<PrivateRouter>
+                <MyConnection></MyConnection>
+            </PrivateRouter>
         },
         {
             path:'/login',

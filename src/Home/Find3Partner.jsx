@@ -1,10 +1,11 @@
 import React, { use, useEffect, useState } from 'react';
 import Find3PartnerCard from './Find3PartnerCard';
 import AuthContext from '../AuthContext/AuthContext';
+import Loding from '../component/Loding';
 
 const Find3Partner = () => {
 
-  const {reload,setReload}= use(AuthContext)
+  const {reload,loding}= use(AuthContext)
     
     const[allPartners,setAllPartners] = useState([])
      useEffect(()=>{
@@ -13,7 +14,11 @@ const Find3Partner = () => {
       .then(data=>{
         setAllPartners(data)
       })
-    },[reload])
+    },[allPartners,reload])
+
+    if(loding){
+      return <Loding></Loding>
+    }
     
     return (
         <div>
