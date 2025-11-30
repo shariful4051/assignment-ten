@@ -14,7 +14,7 @@ const Navbar = () => {
       navigate('/')
     })
           
-
+//----PASSWORD OF SERVER URI: 1TDwQGpdZeSRRugU
   }
      const links = <>
          <li><NavLink  to="/"><span onClick={()=>setToggle('home')} className={` font-medium text-[#000000] mr-3 ${toggle==='home'&&'text-[#9F62F2]   border-b'}`}>Home</span></NavLink></li>

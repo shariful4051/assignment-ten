@@ -31,7 +31,7 @@ const Router = createBrowserRouter([{
         {
             path:'/partnerDetails/:id',
             element:<PartnerDetails></PartnerDetails>,
-            loader:({params})=>fetch(`http://localhost:3000/allpartners/${params.id}`)
+           // loader:({params})=>fetch(`http://localhost:3000/allpartners/${params.id}`)
         },
         {
             path:'/createProfile',

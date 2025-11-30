@@ -1,15 +1,27 @@
-import React, { use } from 'react';
-import { useLoaderData } from 'react-router';
+import React, { use, useEffect, useState } from 'react';
+import { useLoaderData, useParams } from 'react-router';
 import AuthContext from '../AuthContext/AuthContext';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import { reload } from 'firebase/auth';
 
 const PartnerDetails = () => {
-  const{user}=use(AuthContext)
-    const partner = useLoaderData();
+  const{user,reload,setReload}=use(AuthContext)
+    //const partner = useLoaderData();
+    const[partner,setPartner] = useState({})
     const{name,subject,studyMode,location,availabilityTime,experienceLevel,patnerCount,profileimage,_id,rating,email}=partner;
+    const{id} =useParams()
 
-    console.log('from details',partner);
+    useEffect(()=>{
+      fetch(`http://localhost:3000/allpartners/${id}`)
+      .then(res=>res.json())
+      .then(data=>{
+      
+        setPartner(data)
+      })
+    },[id,reload])
+
+    
 
   //---------add partner---------
 
@@ -29,7 +41,7 @@ const PartnerDetails = () => {
       myEmail:user?.email
     }
     console.log('from add partner',partner);
-    fetch('http://localhost:3000/myconnection',{
+    fetch(`http://localhost:3000/myconnection/${_id}`,{
       method:'post',
       headers:{
         'content-type':'application/json'
@@ -47,6 +59,7 @@ const PartnerDetails = () => {
                         showConfirmButton: false,
                         timer: 1500
         });
+        setReload(!reload)
       }
     })
     .catch(error=>{
@@ -65,7 +78,7 @@ const PartnerDetails = () => {
       className="max-w-sm rounded-lg lg:h-[555px] h-[333px] shadow-2xl"
     />
     <div>
-      <h1 className="text-5xl font-bold">
+      <h1 className=" text-2xl md:text-5xl font-bold">
         <span className='font-semibold '>Name :</span>
         <span className='font-bold text-primary'>{name}</span>
       </h1>

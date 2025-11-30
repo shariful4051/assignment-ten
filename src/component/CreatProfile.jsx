@@ -24,7 +24,7 @@ const CreatProfile = () => {
         const location = e.target.location.value;
         const experienceLevel = e.target.level.value;
         const rating = e.target.rating.value;
-        const patnerCount = 0;
+        const patnerCount = Number(0);
         const email = e.target.email.value;
         console.log('from creat profile hello');
         
