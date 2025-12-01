@@ -10,24 +10,43 @@ const FindPartners = () => {
 
     const [allPartners,setAllPartners] = useState([])
 
+    const [search,setSearch]= useState('')
+    const term = search.trim().toLocaleLowerCase()
+   const searchPartners = term?allPartners.filter(partner=>partner.subject.toLocaleLowerCase().includes(term)):allPartners    
+  
+
     useEffect(()=>{
         fetch('http://localhost:3000/allpartners')
         .then(res=>res.json())
         .then(data=>{
             setAllPartners(data)
+            
         })
     },[reload])
+
+    
   if(loding){
     return <Loding></Loding>
   }
 
     return (
-         <div>
+         <div className='max-w-[1140px] mx-auto my-5'>
+      
            
-            <h1 className='text-primary text-center font-bold text-3xl underline'>All Study Partner :<span className='text-secondary'>({allPartners.length})</span></h1>
+            <h1 className='text-primary text-center font-bold text-3xl underline my-5'>All Study Partner :<span className='text-secondary'>({searchPartners.length})</span></h1>
+            
+              <p className='my-3 font-semibold'>Search for Subject:</p>
+              <label className='input w-[180px] md:w-[300px]'>
+                    <input type="text"
+                    value={search}
+                     onChange={e=>setSearch(e.target.value)}
+                     placeholder='Search subject' />
+                </label>
+            
+            
          <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
                {
-                allPartners.map(partner=><Find3PartnerCard key={partner._id} partner={partner}></Find3PartnerCard>)
+                searchPartners.map(partner=><Find3PartnerCard key={partner._id} partner={partner}></Find3PartnerCard>)
             }
          </div>
 

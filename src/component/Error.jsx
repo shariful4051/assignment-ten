@@ -6,7 +6,7 @@ const Error = () => {
     return (
         <div className='max-w-[1140px] mx-auto flex flex-col gap-5'>
             <img className='mx-auto' src={ErrorPage} alt="" />
-            <Link to='/' className='btn btn-secondary'>Go Back</Link>
+            <Link to='/' className='btn btn-secondary'>Go Home</Link>
         </div>
     );
 };
