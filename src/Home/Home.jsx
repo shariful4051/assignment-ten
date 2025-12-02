@@ -9,7 +9,7 @@ const Home = () => {
  // const allPartners = use(allPartnerPromise)
   
     return (
-        <div className='max-w-[1140px] mx-auto my-30'>
+        <div className='max-w-[1140px] mx-auto my-5'>
           <Banner></Banner>
           <Find3Partner></Find3Partner>
           {/* <Find3Partner allPartners={allPartners}></Find3Partner> */}

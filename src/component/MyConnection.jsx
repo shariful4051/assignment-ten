@@ -8,7 +8,7 @@ const MyConnection = () => {
     const {user,reload,loding} = use(AuthContext)
 
     const [myPartners,setMyPartners] = useState([])
-    console.log('myconnection ',myPartners);
+    //console.log('myconnection ',myPartners);
     useEffect(()=>{
         fetch(`http://localhost:3000/myconnection?email=${user?.email}`)
         .then(res=>res.json())

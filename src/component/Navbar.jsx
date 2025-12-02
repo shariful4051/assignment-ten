@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router';
 import AuthContext from '../AuthContext/AuthContext';
 import { GiBookAura } from 'react-icons/gi';
@@ -27,6 +27,20 @@ const Navbar = () => {
          }
         
     </>
+   //----------theme toggle-----------
+   const [theme,setTheme] = useState(localStorage.getItem('theme') ||'light')
+
+   useEffect(()=>{
+   const html = document.querySelector('html')
+   html.setAttribute('data-theme',theme)
+   localStorage.setItem('theme',theme)
+   
+   },[theme])
+
+   const handleTheme = (checked)=>{
+    setTheme(checked?'dark':'light')
+   }
+
     return (
       <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
@@ -52,10 +66,11 @@ const Navbar = () => {
 
     <div className="dropdown dropdown-end">
   <div tabIndex={0} role="button" className=" m-1">{user?<img className='w-[50px] h-[50px] bg-blue-300 rounded-full' src={user?.photoURL} alt="" />:<button><Link to='/login' className='btn'><span className='text-primary '>Login</span></Link></button>}</div>
-  <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+  <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-100 w-52 p-2 shadow-sm">
  
       <li className='font-semibold'><NavLink to='/login'>Login </NavLink></li>
       <li className='font-semibold'><NavLink to='/profile'>Profile</NavLink></li>
+      <input className='toggle' onChange={(e)=>handleTheme(e.target.checked)} type="checkbox" name="" id="" />
     <li className='font-semibold'><a onClick={logOut}>Logout</a></li>
    
   </ul>

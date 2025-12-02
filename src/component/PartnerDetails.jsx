@@ -40,7 +40,7 @@ const PartnerDetails = () => {
       email:email,
       myEmail:user?.email
     }
-    console.log('from add partner',partner);
+    //console.log('from add partner',partner);
     fetch(`http://localhost:3000/myconnection/${_id}`,{
       method:'post',
       headers:{
@@ -50,7 +50,7 @@ const PartnerDetails = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-      console.log(' add patner atter post data',data);
+      //console.log(' add patner atter post data',data);
       if(data.insertedId){
          Swal.fire({
                         position: "top-end",

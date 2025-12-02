@@ -2,7 +2,7 @@
 import { Link, NavLink } from 'react-router';
 
 const Find3PartnerCard = ({partner}) => {
-    console.log(partner);
+    //console.log(partner);
     const {profileimage,name,subject,experienceLevel,rating,_id,patnerCount} = partner;
    
     return (

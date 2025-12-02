@@ -26,10 +26,10 @@ const CreatProfile = () => {
         const rating = e.target.rating.value;
         const patnerCount = Number(0);
         const email = e.target.email.value;
-        console.log('from creat profile hello');
+        //console.log('from creat profile hello');
         
         const profile={name,profileimage,subject,studyMode,availabilityTime,location,experienceLevel,rating,patnerCount,email}
-        console.log(profile);
+       // console.log(profile);
         fetch('http://localhost:3000/allpartners',{
             method:'post',
             headers:{

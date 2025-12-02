@@ -28,7 +28,7 @@ const editPartner = (e)=>{
         const rating = e.target.rating.value;
 
          const updatedPartner={profileimage,subject,studyMode,availabilityTime,location,experienceLevel,rating}
-         console.log('from update',updatedPartner);
+        // console.log('from update',updatedPartner);
        
          fetch(`http://localhost:3000/myconnection/${_id}`,{
           method:'PATCH',
@@ -39,7 +39,7 @@ const editPartner = (e)=>{
          })
          .then(res=>res.json())
          .then(data=>{
-          console.log(data);
+         // console.log(data);
           if(data.modifiedCount){
             openModalRef.current.close()
             setReload(!reload)
