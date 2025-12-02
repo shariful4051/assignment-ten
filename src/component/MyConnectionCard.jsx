@@ -30,7 +30,7 @@ const editPartner = (e)=>{
          const updatedPartner={profileimage,subject,studyMode,availabilityTime,location,experienceLevel,rating}
         // console.log('from update',updatedPartner);
        
-         fetch(`http://localhost:3000/myconnection/${_id}`,{
+         fetch(`https://study-mate-server-blond.vercel.app/myconnection/${_id}`,{
           method:'PATCH',
           headers:{
             'content-type':'application/json'
@@ -74,7 +74,7 @@ const editPartner = (e)=>{
   confirmButtonText: "Yes, delete it!"
 }).then((result) => {
   if (result.isConfirmed) {
-    fetch(`http://localhost:3000/myconnection/${id}`,{
+    fetch(`https://study-mate-server-blond.vercel.app/myconnection/${id}`,{
     method:'DELETE'
     })
     .then(res=>res.json())

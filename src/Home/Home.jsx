@@ -2,7 +2,7 @@ import React, { use } from 'react';
 import Banner from './Banner';
 import Find3Partner from './Find3Partner';
 
-//const allPartnerPromise = fetch('http://localhost:3000/highRating').then(res=>res.json())
+//const allPartnerPromise = fetch('https://study-mate-server-blond.vercel.app/highRating').then(res=>res.json())
 
 
 const Home = () => {

@@ -13,7 +13,7 @@ const PartnerDetails = () => {
     const{id} =useParams()
 
     useEffect(()=>{
-      fetch(`http://localhost:3000/allpartners/${id}`)
+      fetch(`https://study-mate-server-blond.vercel.app/allpartners/${id}`)
       .then(res=>res.json())
       .then(data=>{
       
@@ -41,7 +41,7 @@ const PartnerDetails = () => {
       myEmail:user?.email
     }
     //console.log('from add partner',partner);
-    fetch(`http://localhost:3000/myconnection/${_id}`,{
+    fetch(`https://study-mate-server-blond.vercel.app/myconnection/${_id}`,{
       method:'post',
       headers:{
         'content-type':'application/json'

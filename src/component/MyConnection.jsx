@@ -10,7 +10,7 @@ const MyConnection = () => {
     const [myPartners,setMyPartners] = useState([])
     //console.log('myconnection ',myPartners);
     useEffect(()=>{
-        fetch(`http://localhost:3000/myconnection?email=${user?.email}`)
+        fetch(`https://study-mate-server-blond.vercel.app/myconnection?email=${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
             setMyPartners(data)

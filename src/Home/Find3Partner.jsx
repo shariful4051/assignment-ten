@@ -9,7 +9,7 @@ const Find3Partner = () => {
     
     const[allPartners,setAllPartners] = useState([])
      useEffect(()=>{
-      fetch('http://localhost:3000/highRating')
+      fetch('https://study-mate-server-blond.vercel.app/highRating')
       .then(res=>res.json())
       .then(data=>{
         setAllPartners(data)

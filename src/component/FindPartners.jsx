@@ -2,7 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import Find3PartnerCard from '../Home/Find3PartnerCard';
 import AuthContext from '../AuthContext/AuthContext';
 import Loding from './Loding';
-//const findPartnersPromise = fetch('http://localhost:3000/allpartners').then(res=>res.json())
+//const findPartnersPromise = fetch('https://study-mate-server-blond.vercel.app/allpartners').then(res=>res.json())
 
 const FindPartners = () => {
     //const allPartners = use(findPartnersPromise)
@@ -16,7 +16,7 @@ const FindPartners = () => {
   
 
     useEffect(()=>{
-        fetch('http://localhost:3000/allpartners')
+        fetch('https://study-mate-server-blond.vercel.app/allpartners')
         .then(res=>res.json())
         .then(data=>{
             setAllPartners(data)

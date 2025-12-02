@@ -30,7 +30,7 @@ const CreatProfile = () => {
         
         const profile={name,profileimage,subject,studyMode,availabilityTime,location,experienceLevel,rating,patnerCount,email}
        // console.log(profile);
-        fetch('http://localhost:3000/allpartners',{
+        fetch('https://study-mate-server-blond.vercel.app/allpartners',{
             method:'post',
             headers:{
                 'content-type':'application/json'
